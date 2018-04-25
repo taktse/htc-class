@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -f  error/* logs/* output/* *~
+
+exit
+

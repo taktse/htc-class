@@ -1,0 +1,27 @@
+#!/usr/bin/perl
+use strict;
+my $maxPoints = $ARGV[0] || 10;
+if($maxPoints < 10) {
+    print " Number of points must be >= 10. Exiting...\n";
+    exit -1;
+}
+my $totalPoints;
+my $pointsInCircle;
+while($totalPoints < $maxPoints) {
+  my $x = 1.0 - rand(2);
+  my $y = 1.0 - rand(2);
+  $totalPoints++;
+  my $distance = ($x**2 + $y**2);
+  if($distance < 1) {
+    $pointsInCircle++;
+  }
+}
+my $areaSquare = 4;
+my $areaCircle = ($pointsInCircle/$totalPoints)*$areaSquare;
+my $pi = $pointsInCircle/$totalPoints;
+my $error = 1.96*sqrt($pi*(1-$pi)/$totalPoints);
+$error = $error * 4;
+my $pi = $areaCircle/1**2;
+print "$maxPoints   $pi   $error\n";
+exit;
+

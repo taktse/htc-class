@@ -1,0 +1,25 @@
+####################
+#
+# submit description file
+# Example 1: queuing multiple jobs with differing
+# command line arguments and output files.
+#
+####################
++ProjectName = "TG-CIE170062"
+
+Executable     = WordCount
+Arguments      = $(file)
+Universe       = vanilla   
+
+transfer_output_files  = output.dat
+line                   = $(Row)+1
+transfer_output_remaps = "output.dat=output/count$INT(line).dat"
+
+# Notification   = Never
+# Output         = output/CondorCountWords.$(Cluster).$(Process).out
+Error          = error/CondorCountWords.$(Cluster).$(Process).err
+Log            = logs/CondorCountWords.$(Cluster).$(Process).log
+
+ShouldTransferFiles = YES
+
+Queue transfer_input_files,arguments from CountWords.lst

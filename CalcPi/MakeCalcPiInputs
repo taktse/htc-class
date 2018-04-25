@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+use strict;
+my $totalJobs = 100;
+my $maxTries  = 100000;
+my $increment = int($maxTries/$totalJobs);
+my $count     = 0;
+open(OUT, "> CalcPi.inputs") or die " What the heck:: $! CalcPi.inputs\n";
+while($count < $totalJobs) {
+  $count++;
+  my $tries = int(10 + $count * $increment);
+  print OUT "$tries\n";
+}
+exit;
+

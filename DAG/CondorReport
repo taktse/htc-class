@@ -1,0 +1,23 @@
+# The UNIVERSE defines an execution environment. You will almost always use VANILLA.
+Universe = vanilla
+
+# These are good base requirements for your jobs on OSG. It is specific on OS and
+# OS version, core cound and memory, and wants to use the software modules. 
+# Requirements = OSGVO_OS_STRING == "RHEL 6" && Arch == "X86_64" &&  HAS_MODULES == True
+request_cpus = 1
+request_memory = 1 GB
+
+# EXECUTABLE is the program your job will run It's often useful
+# to create a shell script to "wrap" your actual work.
+Executable = CountReport
+Arguments = 
+
+# Notification   = Never
+Output         = output/CondorReport.$(Cluster).$(Process).out
+Error          = error/CondorReport.$(Cluster).$(Process).err
+Log            = logs/CondorReport.$(Cluster).$(Process).log
+
+ShouldTransferFiles = YES
+# transfer_input_files = output/count1.dat,  output/count2.dat,  output/count3.dat,  output/count4.dat,  output/count5.dat
+# Queue
+Queue transfer_input_files from OutputData.lst

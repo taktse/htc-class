@@ -1,0 +1,5 @@
+inputs/Alices_Adventures_in_Wonderland_by_Lewis_Carroll.txt,  -f Alices_Adventures_in_Wonderland_by_Lewis_Carroll.txt  -o output.dat
+inputs/Dracula_by_Bram_Stoker.txt,                            -f Dracula_by_Bram_Stoker.txt                            -o output.dat
+inputs/Pride_and_Prejudice_by_Jane_Austen.txt,                -f Pride_and_Prejudice_by_Jane_Austen.txt                -o output.dat
+inputs/The_Adventures_of_Huckleberry_Finn_by_Mark_Twain.txt,  -f The_Adventures_of_Huckleberry_Finn_by_Mark_Twain.txt  -o output.dat
+inputs/Ulysses_by_James_Joyce.txt,                            -f Ulysses_by_James_Joyce.txt                            -o output.dat

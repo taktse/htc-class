@@ -1,0 +1,6 @@
+#!/bin/bash
+for host in $(cat output/* | sort | uniq | awk '{print $7}'); do
+    echo -n " $host  "
+    cat output/* | grep -c $host
+done
+exit

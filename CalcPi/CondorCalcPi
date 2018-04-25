@@ -1,0 +1,22 @@
+####################
+#
+# submit description file
+# Example 1: queuing multiple jobs with differing
+# command line arguments and output files.
+#
+####################
++ProjectName = "TG-CIE170062"
+
+Executable     = CalcPi
+Arguments      = $(file)
+Universe       = vanilla   
+
+#Notification   = Never
+Output         = output/CondorTestJob.$(Cluster).$(Process).out
+Error          = error/CondorTestJob.$(Cluster).$(Process).err
+Log            = logs/CondorTestJob.$(Cluster).$(Process).log
+
+ShouldTransferFiles = YES
+WhenToTransferOutput = ON_EXIT
+TransferInputFiles = CalcPi
+Queue file from CalcPi.inputs

@@ -1,0 +1,11 @@
++ProjectName = "TG-CIE170062"
+Executable     = HelloWorld
+Universe       = vanilla   
+Output         = output/CondorTestJob.$(Cluster).$(Process).out
+Error          = error/CondorTestJob.$(Cluster).$(Process).err
+Log            = logs/CondorTestJob.$(Cluster).$(Process).log
+ShouldTransferFiles = YES
+WhenToTransferOutput = ON_EXIT
+Queue 50
+
+
