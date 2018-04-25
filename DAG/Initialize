@@ -1,5 +1,5 @@
 #!/bin/bash 
 
-mkdir -p logs errors output inputs
+mkdir -p logs error output inputs
 
 exit
