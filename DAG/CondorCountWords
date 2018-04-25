@@ -16,7 +16,6 @@ line                   = $(Row)+1
 transfer_output_remaps = "output.dat=output/count$INT(line).dat"
 
 # Notification   = Never
-# Output         = output/CondorCountWords.$(Cluster).$(Process).out
 Error          = error/CondorCountWords.$(Cluster).$(Process).err
 Log            = logs/CondorCountWords.$(Cluster).$(Process).log
 
