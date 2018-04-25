@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -f CountWords.dag.* report.txt error/* logs/* output/* *~
+
+exit
+

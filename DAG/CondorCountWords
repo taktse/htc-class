@@ -21,4 +21,4 @@ Log            = logs/CondorCountWords.$(Cluster).$(Process).log
 
 ShouldTransferFiles = YES
 
-Queue transfer_input_files,arguments from CountWords.lst
+Queue transfer_input_files,arguments from InputData.lst

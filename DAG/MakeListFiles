@@ -11,15 +11,15 @@
 # Created.                                  04/25/2018  doug johnson
 #-------------------------------------------------------------------
 
-count=0
+count=1
 inputFile=${1:-TestInput.lst}
-outputFile=${1:-TestOutput.lst}
+outputFile=${2:-TestOutput.lst}
 
 cat /dev/null > $outputFile
 cat /dev/null > $inputFile
 
 for file in $(ls inputs/*); do
-   echo `date`" Adding $file to CountWords.lst and output/count${count}.dat to OutputData.lst"
+   echo `date`" Adding $file to $inputFile and output/count${count}.dat to $outputFile"
    echo -n "output/count${count}.dat, " >> $outputFile
    base=`basename $file`
    echo "$file, -f $base  -o output.dat" >> $inputFile

@@ -3,6 +3,8 @@ import argparse
 import sys
 from collections import Counter
 import re
+import random
+import time 
 
 global outFile, inFile
 parser = argparse.ArgumentParser(description='Process some integers.')
@@ -27,5 +29,5 @@ for item in Counter(words).most_common(100):
         output.write("%-10s    %8d\n" % (item[0], item[1]))
 
 output.close()
-
+time.sleep(random.randint(5, 60))
 sys.exit(0)

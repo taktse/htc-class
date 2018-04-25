@@ -1,0 +1,13 @@
+#!/bin/bash
+
+OUT=report.txt
+
+echo "The top 5 words with the highest word frequency for each book:" >$OUT
+
+for DATA in `ls *.dat`; do
+    echo "" >>$OUT
+    head -n 6 $DATA >>$OUT
+done
+
+exit
+
