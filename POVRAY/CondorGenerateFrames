@@ -7,7 +7,8 @@
 ####################
 +ProjectName = "TG-CIE170062"
 
-Executable     = GenerateImage
+Executable     = RunGenerateFrames
+Arguments      = $(file)
 Universe       = vanilla   
 
 # Notification   = Never
@@ -17,7 +18,7 @@ Output         = output/CondorPOVRAY.$(Cluster).$(Process).out
 
 ShouldTransferFiles = YES
 transfer_output_files = images
-transfer_input_files  = Ubuntu-Xenial-PovRay.img, benchmark.ini, benchmark.pov
+transfer_input_files  = Ubuntu-Xenial-PovRay.img, GenerateFrames, benchmark.ini, benchmark-template.pov
 request_cpus = 4
 
-Queue
+Queue arguments from RunTimeParameters.lst

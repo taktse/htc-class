@@ -25,7 +25,7 @@ my $threads = $opt_t || 1;
 
 Print("Starting application: $0");
 Print("Running with $threads threads");
-exit;         
+
 #
 # If the -h option is specified, print help message and exit
 #
