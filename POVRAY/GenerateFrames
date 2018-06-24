@@ -1,0 +1,79 @@
+#!/usr/bin/perl
+#
+#eval "exec perl -S $0 $*" 
+#    if $running_under_some_shell;
+#------------------------------------------------------------==ADM==
+# Custom Software, Developed for CUHEP by staff. 
+# This software is in the public domain, furnished "as is", without
+# technical support, and with no warranty, express or implied, as
+# to its usefulness for any purpose.
+#
+# GenerateFrames      
+#
+# REVISION HISTORY
+# Created.                                  12/11/2017  doug johnson
+#-------------------------------------------------------------------
+use strict;
+use Getopt::Std;
+our($opt_h,$opt_e, $opt_s, $opt_t);
+         
+getopts("he:s:t:");
+my $start = $opt_s;
+my $end   = $opt_e;
+my $threads = $opt_t || 1;
+
+
+Print("Starting application: $0");
+Print("Running with $threads threads");
+exit;         
+#
+# If the -h option is specified, print help message and exit
+#
+if($start =~ /^$/ or $end =~ /^$/) {
+  Print("You must specify start and end frame numbers");
+  exit -1;
+}
+
+if($opt_h) {
+  exit;
+}
+         
+#
+# Code starts here...
+#
+my $x=3.2;
+my $y=3.2;
+my $z=1.8;
+my $r = ($x**2 + $y**2)**0.5;
+my $angle = 0.0;
+my $inc   = 2*3.1415926/1500;
+my $scale = 1.0/3000; 
+Print("Starting to generate frames $start to $end");
+
+for(my $n=$start; $n<$end; $n++) {
+  my $radiusNew = $r*(1-$scale)**$n;
+  my $angleNew  = $angle + $n*$inc;
+  my $new_x = sprintf("%5.2f", $radiusNew*cos($angleNew));
+  my $new_y = sprintf("%5.2f", $radiusNew*sin($angleNew));
+  my $new_z = $z;
+  my $frameFile = sprintf("frame-%5.5d.pov", $n);
+  system("sed s'/%xcoor%/$new_x/' benchmark-template.pov | sed s'/%ycoor%/$new_y/' | sed s'/%zcoor%/$new_z/' > $frameFile");
+  system("povray +WT$threads -D  +a0.3 $frameFile");
+}
+
+exit;
+         
+#-------------Subroutines ---------------
+#  Subroutine to print out message with date
+#  Similar to the appearance of syslog
+#
+sub Print {
+  (my $message) = @_;
+  chomp($message);
+  chomp(my $date = `date`);
+  (my @lines) = split("\n", $message);
+  foreach my $line (@lines) {
+     print("$date\: $line\n");
+  }
+  return 0;
+}

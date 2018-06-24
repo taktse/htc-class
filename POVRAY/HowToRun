@@ -1,0 +1,3 @@
+povray +WT8  -W1280 -H720 -D +a0.4 -D benchmark.pov
+povray -w24000 -h18000 +a0.3 benchmark.pov
+

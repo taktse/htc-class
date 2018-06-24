@@ -1,0 +1,23 @@
+####################
+#
+# Condor submit for generating POVRAY images
+# 
+# 
+#
+####################
++ProjectName = "TG-CIE170062"
+
+Executable     = GenerateFrames
+Arguments      = $(file)
+Universe       = vanilla   
+
+# Notification   = Never
+Error          = error/CondorPOVRAY.$(Cluster).$(Process).err
+Log            = logs/CondorPOVRAY.$(Cluster).$(Process).log
+Output         = output/CondorPOVRAY.$(Cluster).$(Process).out
+
+ShouldTransferFiles = YES
+transfer_output_files = images
+transfer_input_files  = Ubuntu-Xenial-PovRay.img, benchmark.ini, benchmark.pov
+
+Queue arguments from RunTimeParameters.lst

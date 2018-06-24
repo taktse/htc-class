@@ -6,6 +6,6 @@ Error          = error/CondorTestJob.$(Cluster).$(Process).err
 Log            = logs/CondorTestJob.$(Cluster).$(Process).log
 ShouldTransferFiles = YES
 WhenToTransferOutput = ON_EXIT
-Queue 50
+Queue 500
 
 
