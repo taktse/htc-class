@@ -1,6 +1,6 @@
 #!/bin/bash
 
-singularity run -B /home/drjohn/Projects/htc-class/POVRAY Ubuntu-Xenial-PovRay.img /sbin/wrapper.sh ./GenerateFrames -s $1 -e $2 -t 1
+/usr/bin/singularity run -B `pwd`  Ubuntu-Xenial-PovRay.img /sbin/wrapper.sh ./GenerateFrames -s $1 -e $2 -t 4
 mkdir -p images
 mv *png images/
 rm -f frame*pov

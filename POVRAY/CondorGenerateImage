@@ -6,6 +6,7 @@
 #
 ####################
 +ProjectName = "TG-CIE170062"
+# Requirements = HAS_SINGULARITY == True
 
 Executable     = GenerateImage
 Universe       = vanilla   

@@ -1,0 +1,11 @@
+#############################################
+##  submit description file for a parallel universe job
+#############################################
+universe = parallel
+executable = /bin/sleep
+arguments = 30
+machine_count = 8
+log = log
+should_transfer_files = IF_NEEDED
+when_to_transfer_output = ON_EXIT
+queue

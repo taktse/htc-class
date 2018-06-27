@@ -1,0 +1,13 @@
+######################################
+## Example submit description file
+## for MPICH 1 MPI
+## works with MPICH 1.2.4, 1.2.5 and 1.2.6
+######################################
+universe = parallel
+executable = mp1script
+arguments = my_mpich_linked_executable arg1 arg2
+machine_count = 4
+should_transfer_files = yes
+when_to_transfer_output = on_exit
+transfer_input_files = my_mpich_linked_executable
+queue

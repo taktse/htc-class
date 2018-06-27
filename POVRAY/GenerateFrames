@@ -50,7 +50,7 @@ my $inc   = 2*3.1415926/1500;
 my $scale = 1.0/3000; 
 Print("Starting to generate frames $start to $end");
 
-for(my $n=$start; $n<$end; $n++) {
+for(my $n=$start; $n<=$end; $n++) {
   my $radiusNew = $r*(1-$scale)**$n;
   my $angleNew  = $angle + $n*$inc;
   my $new_x = sprintf("%5.2f", $radiusNew*cos($angleNew));
@@ -58,7 +58,7 @@ for(my $n=$start; $n<$end; $n++) {
   my $new_z = $z;
   my $frameFile = sprintf("frame-%5.5d.pov", $n);
   system("sed s'/%xcoor%/$new_x/' benchmark-template.pov | sed s'/%ycoor%/$new_y/' | sed s'/%zcoor%/$new_z/' > $frameFile");
-  system("povray +WT$threads -D  +a0.3 $frameFile");
+  system("povray +WT$threads -W800 -H600 -D  +a0.3 $frameFile");
 }
 
 exit;

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ls -al
-singularity run -B /home/drjohn/Projects/htc-class/POVRAY Ubuntu-Xenial-PovRay.img /sbin/wrapper.sh povray +WT4  -W800 -H600 -D +a0.4 -D benchmark.pov
+/usr/bin/singularity run -B `pwd`  Ubuntu-Xenial-PovRay.img /sbin/wrapper.sh povray +WT4  -W800 -H600 -D +a0.4 -D benchmark.pov
 mkdir -p images
 mv *png images/
 

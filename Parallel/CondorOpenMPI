@@ -1,0 +1,12 @@
+######################################
+## Example submit description file
+## for Open MPI
+######################################
+universe = parallel
+executable = openmpiscript
+arguments = my_openmpi_linked_executable arg1 arg2
+machine_count = 4
+should_transfer_files = yes
+when_to_transfer_output = on_exit
+transfer_input_files = my_openmpi_linked_executable
+queue
