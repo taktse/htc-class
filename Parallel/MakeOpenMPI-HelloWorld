@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+mpicc OpenMPI-HelloWork.c  -o OpenMPI-HelloWorld
+
+exit

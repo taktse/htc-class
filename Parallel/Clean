@@ -1,0 +1,5 @@
+#!/bin/bash 
+ 
+rm -f log error.log output.log OpenMPI-HelloWorld
+
+exit

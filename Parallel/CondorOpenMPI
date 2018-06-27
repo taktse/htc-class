@@ -4,9 +4,13 @@
 ######################################
 universe = parallel
 executable = openmpiscript
-arguments = my_openmpi_linked_executable arg1 arg2
-machine_count = 4
+arguments = OpenMPI-HelloWork
+machine_count =  8
+request_cpus  = 32 
 should_transfer_files = yes
+log = log
+error = error.log
+output = output.log
 when_to_transfer_output = on_exit
-transfer_input_files = my_openmpi_linked_executable
+transfer_input_files = OpenMPI-HelloWork
 queue
