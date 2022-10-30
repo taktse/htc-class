@@ -1,5 +1,5 @@
 # htc-class
-Class notes, lessons, and examples for An Najah 2018 HTC Class
+Class notes, lessons, and examples for An Najah 2018 HTC Class.
 
 HelloWorld - Simple Hello World example. Includes two HTCondor submit
 files. Onee to run one instance and one to run many instances. It also
